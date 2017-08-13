@@ -1,9 +1,9 @@
-var tableData = require("../data/friends");
+var tableData = require("../data/friends.js");
 
 module.exports = function(app) {
  
   app.get("/api/friends", function(req, res) {
-    res.json(friends);
+    res.json(tableData);
 
     // friends data shall be passed in this section
     // insert compatibility matrix
@@ -14,13 +14,13 @@ module.exports = function(app) {
 
   app.post("/api/friends", function(req, res) {
 
-      friends.push(req.body);
-      res.json(true);
+      tableData.push(req.body);
+      res.json(tableData);
   });
 
-  app.post("/api/clear", function() {
-    friends = [];
+//   app.post("/api/clear", function() {
+//     friends = [];
     
-    console.log(friends);
-  });
+//     console.log(friends);
+//   });
 };
